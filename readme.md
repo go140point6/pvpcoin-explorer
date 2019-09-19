@@ -95,6 +95,9 @@ exit
 sudo apt-get install libkrb5-dev -y
 sudo chown -R $USER:$(id -gn $USER) ~/.config
 mkdir ~/nvm && cd ~/nvm
+```
+Note: if things get messed up or you just want to strat over with iquidus and try fresh, simply delete the explorer/ folder and start from this point again.
+```
 git clone https://github.com/iquidus/explorer.git
 cd explorer && npm install --production
 ```
@@ -299,7 +302,9 @@ screen -S update
 node scripts/sync.js index reindex
 node scripts/sync.js index update
 ```
-If all goes well, the 'index update' should start at the genesis block and index all blocks (output to screen), takes a little while to complete ubt you'll definitely know it's working.  When done, you can exit the 'update' screen
+If all goes well, the 'index update' should start at the genesis block and index all blocks (output to screen), takes a little while to complete ubt you'll definitely know it's working.  When done, you can exit the 'update' screen.
+
+Note: Things didn't go well or work as expected with iquidus?  Delete explorer/ folder and start fresh again (see above for start point).
 
 ### nginx reverse proxy
 ```
