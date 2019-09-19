@@ -274,12 +274,16 @@ favicon.ico -> cp favicon.ico to public/
 
 #### Fix for 'length' undefined
 edit -> lib/explorer.js
+```
 - 343 if (tx) {
 + 343 if (tx && tx.vout) {
+```
 
 edit -> scripts/sync.js
+```
 + 107 // unlink lock file
 + 108 process.on('uncaughtException', exit);
+```
 
 ### Start up and get initial index
 cd ~/nvm/explorer
