@@ -286,7 +286,9 @@ edit -> scripts/sync.js
 ```
 
 ### Start up and get initial index
+```
 cd ~/nvm/explorer
+```
 Note: I find it easiest to open multiple ssh shells here, but you should use screen no matter what to keep the explorer running. The information shown here is very helpful to troubleshoot.  Be sure to exit the 'npm' screen with ctrl+A+D to leave it running in the background.
 ```
 screen -S npm
@@ -297,7 +299,7 @@ screen -S update
 node scripts/sync.js index reindex
 node scripts/sync.js index update
 ```
-If all goes well, the 'index update' should start at the genesis block and index all blocks, takes a little while to complete.  When done, you can exit the 'update' screen
+If all goes well, the 'index update' should start at the genesis block and index all blocks (output to screen), takes a little while to complete ubt you'll definitely know it's working.  When done, you can exit the 'update' screen
 
 ### nginx reverse proxy
 ```
@@ -341,7 +343,7 @@ npm start
 ctrl+A+D
 ```
 
-### cron for running the 
+### cron for running the update script every 2 minutes
 ```
 crontab -e
 
