@@ -81,7 +81,7 @@ change default port to something other than standard, i.e. 19734
 sudo systemctl daemon-reload
 sudo systemctl restart mongod.service
 
-mongo --port=19464 -u admin -p
+mongo --port=19734 -u admin -p
 ```
 Note: this prompts for mongo admin password so it's not saved in shell history
 ```
