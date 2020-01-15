@@ -288,6 +288,13 @@ edit -> scripts/sync.js
 + 108 process.on('uncaughtException', exit);
 ```
 
+#### Fix for 'nonstandard transaction' issue tripping up indexing
+edit -> lib/explorer.js
+```
+-287 if (vout[i].scriptPubKey.type != 'nonstandard' && vout[i].scriptPubKey.type != 'nulldata') {
++287 if (vout[i].scriptPubKey.type != 'nonstandard' && vout[i].scriptPubKey.type != 'nulldata' && vout[i].scriptPubKey.hasOwnProperty("addresses")) {
+```
+
 ### Start up and get initial index
 ```
 cd ~/nvm/explorer
